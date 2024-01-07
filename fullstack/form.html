@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+.flex{
+  display: flex;
+ flex-flow: row wrap;
+  width: 1200px;
+    
+}
+.flex> div {
+  display: flex;
+  background-color: #ffffff;
+  margin-top: 10px;
+  margin-left: 5px;
+	flex-flow: row wrap;
+	flex-shrink: 1;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+</head>
+<body>
+<div class="flex">
+<div>
+<label for="first">First Name:</label>
+</div class="flex">
+<div>
+<input type="text" id="first" name="namefirst" required>
+</div>
+<div>
+<label for="last">Last Name:</label>
+</div>
+<div>
+<input type="text" id="last" name="namelast" required>
+</div>
+<div>
+<label for="drop">Gender:</label>
+<select style="margin-left: 2px;text-align: center;"id="drop" required>
+<option value="m">Male</option>
+<option  value="f">Female</option>
+</select>
+</div>
+<div>
+<label for="Username">Username:</label>
+</div>
+<div>
+<input type="text" id="Username" name="username" required>
+</div>
+<div>
+<label for="pass" >Password:</label>
+</div>
+<div>
+<input type="password" name="pass_word" id="pass" required>
+</div>
+<div>
+<label for="password-confirm">Confirm Password:</label>
+</div>
+<div>
+<input type="password" id="password-confirm" name="pass-confirm" required>
+</div>
+<div>
+
+</div>
+</div>
+</body>
+</html>
