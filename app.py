@@ -3,15 +3,26 @@ import psycopg2
 
 app = Flask(__name__)
 
-DB_HOST ='localhost'
-DB_PORT ='5432'
-DB_NAME = 'Fullstack'
-DB_USER ='postgres'
-DB_PASSWORD ='12345'
+def get_db_connection():
+    return psycopg2.connect(   
+    host ='localhost',
+    port ='5432',
+    dbname = 'Fullstack',
+    user ='postgres',
+    password ='12345')
+
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('select * from data')
+    users = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    return render_template('index.html', users = users)
+    
+
 
 @app.route('/submit',methods=['POST'])
 def submit():
@@ -20,13 +31,7 @@ def submit():
     lastname = request.form['name_last']
     password = request.form['pass_word']
 
-    conn = psycopg2.connect(
-        host=DB_HOST,
-        port=DB_PORT,
-        dbname=DB_NAME,
-        user=DB_USER,
-        password=DB_PASSWORD
-    )
+    
 
     cursor = conn.cursor()
 
@@ -39,4 +44,4 @@ def submit():
 
     return redirect('/')
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0',port=300)
+    app.run(debug=True)

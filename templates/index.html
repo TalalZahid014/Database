@@ -4,8 +4,80 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=, initial-scale=1.0">
   <title>Form</title>
+  <link rel="stylesheet" href="../styles.css">
+<style>
+*{
+  line-height: calc(1em +0.5rem);
+  font-size: 1rem;
+}
+html{
+  scroll-behavior: smooth;
+}
+.btn{
+  background-color:#0284c7;
+  border: none;
+  height: 2rem;
+  width: 6rem;
+  margin: 1rem;
+}
+form,.btn{
+  display: flex;
+  flex-flow: column wrap;
+  margin: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+label{
+  margin-top: 1.5rem;
+}
+body{
+	background-color: #1e293b;
+	color: #f1f1f1;
+}
+input{
+	background-color: #1e293b;
+	border: 2px solid #155e75;
+	border-radius: 1rem;
+	height: 1.5rem;
+	width: 10rem;
+
+}
+.btn:hover{
+	background-color: #38bdf8;
+	cursor: pointer;
+}
+td{
+	align-items: center;
+	justify-content: center;
+	margin: 1rem;
+	border: 3px solid black;
+	padding: 1rem;
+}
+h1{
+  margin: 1rem;
+}
+</style>
 </head>
 <body>
+<h1>All Employees</h1>
+<table>
+<tr>
+	{% for user in users %}
+	<td>
+		{{user[1]}}   
+	</td>
+	<td>
+	{{user[2]}}
+	</td>
+	<td>
+	{{user[3]}}
+	</td>
+	<td>
+	{{user[4]}}
+	</td>
+</tr>
+	{% endfor %}
+</table>
   <form action="/submit" method="post">
 		<label for="username">Username:</label>
 		<input type="text" id="username" name="user_name" required>
@@ -15,7 +87,7 @@
 		<input type="text" id="last-name" name="name_last">
 		<label for="password">Password:</label>
 		<input type="password" name="pass_word" id="password">
-		<input type="submit" value="Submit">
+		<input class="btn" type="submit" value="Submit">
 	</form>
 </body>
 </html>
