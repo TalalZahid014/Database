@@ -11,6 +11,7 @@ def get_db_connection():
     user ='postgres',
     password ='12345')
 
+conn = get_db_connection()
 
 @app.route('/')
 def index():
