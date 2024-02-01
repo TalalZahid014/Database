@@ -27,7 +27,7 @@ form{
   margin: 1.5rem;
   align-items: center; 
   position:absolute;
-  top:5rem;
+  top:2rem;
   right:19rem;
 }
 label{
@@ -53,23 +53,39 @@ td{
 	align-items: center;
 	justify-content: center;
 	margin: 1rem;
-	border: 3px solid black;
-	padding: 1rem;
+	border: 2.5px solid black;
+	padding: 0.5rem;
 }
-h1{
+.div{
   margin: 0.3rem;
   margin-left: 0.2rem;
-  border: 2px solid black;
+  border: 3px solid black;
   width: 10rem;
   height: 1.5rem;
   padding: 0.3rem;
   text-align: center;
+  padding-top: 0.4rem;
 }
+
 </style>
 </head>
 <body>
-<h1>All Employee Data</h1>
+<div class="div">All Employee Data</div>
 <table>
+<tr>
+<td>
+  Username
+</td>
+<td>
+  First Name
+</td>
+<td>
+  Last Name
+</td>
+<td>
+  Password
+</td>
+</tr>
 <tr>
 	{% for user in users %}
 	<td>
@@ -87,6 +103,7 @@ h1{
 </tr>
 	{% endfor %}
 </table>
+<img src="/qrcode_chrome.png">
 <div>
   <form action="/submit" method="post">
 		<label for="username">Username:</label>
