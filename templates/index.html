@@ -27,7 +27,7 @@ form{
   margin: 1.5rem;
   align-items: center; 
   position:absolute;
-  top:2rem;
+  top:7rem;
   right:19rem;
 }
 label{
@@ -52,13 +52,16 @@ input{
 td{
 	align-items: center;
 	justify-content: center;
+  position: relative;
 	margin: 1rem;
 	border: 2.5px solid black;
 	padding: 0.5rem;
+  left: 6rem;
 }
 .div{
   margin: 0.3rem;
-  margin-left: 0.2rem;
+  margin-left: 6.1rem;
+  margin-top: .8rem;
   border: 3px solid black;
   width: 10rem;
   height: 1.5rem;
@@ -66,10 +69,18 @@ td{
   text-align: center;
   padding-top: 0.4rem;
 }
-
+img{
+  height: 6rem;
+  width: 6rem;
+  position: relative;
+  bottom: 26rem;
+  left: 50.6rem;
+  
+}
 </style>
 </head>
 <body>
+
 <div class="div">All Employee Data</div>
 <table>
 <tr>
@@ -103,7 +114,7 @@ td{
 </tr>
 	{% endfor %}
 </table>
-<img src="/qrcode_chrome.png">
+<img src="{{ url_for('static', filename='qrcode.jpg') }}" alt="Logo">
 <div>
   <form action="/submit" method="post">
 		<label for="username">Username:</label>
