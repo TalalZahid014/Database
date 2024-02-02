@@ -27,8 +27,8 @@ form{
   margin: 1.5rem;
   align-items: center; 
   position:absolute;
-  top:7rem;
-  right:19rem;
+  top:6rem;
+  left: 5rem;
 }
 label{
   margin-top: 1.5rem;
@@ -58,31 +58,49 @@ td{
 	margin: 1rem;
 	border: 2.5px solid black;
 	padding: 0.5rem;
-  left: 6rem;
+  left: 5rem;
+  top: 24rem;
 }
 .div{
+  position: relative;
   margin: 0.3rem;
   margin-left: 6.1rem;
-  margin-top: .8rem;
-  border: 3px solid black;
+  border: 2px solid black;
   width: 10rem;
   height: 1.5rem;
   padding: 0.3rem;
   text-align: center;
   padding-top: 0.4rem;
+  top: 24rem;
+  left: -1rem;
 }
 img{
   height: 6rem;
   width: 6rem;
   position: relative;
-  bottom: 26rem;
-  left: 50.6rem;
-  
+  bottom: -1rem;
+  right: -8.2rem;
+}
+a{
+  color: #f1f1f1;
 }
 </style>
 </head>
 <body>
-
+<img src="{{ url_for('static', filename='qrcode.jpg') }}" alt="Logo">
+<div>
+  <form action="/submit" method="post">
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="user_name" required>
+		<label for="first-name">First Name:</label>
+		<input type="text" id="first-name" name="name_first" required>
+		<label for="last-name">Last Name:</label>
+		<input type="text" id="last-name" name="name_last">
+		<label for="password">Password:</label>
+		<input type="password" name="pass_word" id="password">
+		<input class="btn" type="submit" value="Submit">
+	</form>
+</div>
 <div class="div">All Employee Data</div>
 <table>
 <tr>
@@ -97,6 +115,9 @@ img{
 </td>
 <td>
   Password
+</td>
+<td>
+  View Data
 </td>
 </tr>
 <tr>
@@ -119,19 +140,5 @@ img{
 </tr>
 	{% endfor %}
 </table>
-<img src="{{ url_for('static', filename='qrcode.jpg') }}" alt="Logo">
-<div>
-  <form action="/submit" method="post">
-		<label for="username">Username:</label>
-		<input type="text" id="username" name="user_name" required>
-		<label for="first-name">First Name:</label>
-		<input type="text" id="first-name" name="name_first" required>
-		<label for="last-name">Last Name:</label>
-		<input type="text" id="last-name" name="name_last">
-		<label for="password">Password:</label>
-		<input type="password" name="pass_word" id="password">
-		<input class="btn" type="submit" value="Submit">
-	</form>
-</div>
 </body>
 </html>
