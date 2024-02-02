@@ -36,6 +36,8 @@ label{
 body{
 	background-color: #1e293b;
 	color: #f1f1f1;
+  /* display: flex; */
+  /* flex-flow: column wrap; */
 }
 input{
 	background-color: #1e293b;
@@ -100,7 +102,7 @@ img{
 <tr>
 	{% for user in users %}
 	<td>
-		{{user[1]}}   
+	{{user[1]}}   
 	</td>
 	<td>
 	{{user[2]}}
@@ -111,6 +113,9 @@ img{
 	<td>
 	{{user[4]}}
 	</td>
+  <td>
+    <a href="{{url_for('view_user', user_id=user[0])}}">View</a>
+  </td>
 </tr>
 	{% endfor %}
 </table>
