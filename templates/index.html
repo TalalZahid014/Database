@@ -37,7 +37,7 @@ body{
   /* display: flex; */
   /* flex-flow: column wrap; */
 }
-.input>input{
+.index{
   background-color:transparent;
   border: none;
   margin: none;
@@ -111,19 +111,19 @@ a{
   <form action="/submit" method="post">
 		<label for="username">Username:</label>
 		<div class="input">
-      <input type="text" id="username" name="user_name" required>
+      <input class="index" type="text" id="username" name="user_name" required>
     </div>
 		<label for="first-name">First Name:</label>
 		<div class="input">
-      <input type="text" id="first-name" name="name_first" required>
+      <input class="index" type="text" id="first-name" name="name_first" required>
     </div>
 		<label for="last-name">Last Name:</label>
 		<div class="input">
-      <input type="text" id="last-name" name="name_last">
+      <input class="index" type="text" id="last-name" name="name_last">
     </div>
 		<label for="password">Password:</label>
 		<div class="input">
-      <input type="password" name="pass_word" id="password">
+      <input class="index" type="password" name="pass_word" id="password">
     </div>
 		<input class="btn" type="submit" value="Submit">
 	</form>
