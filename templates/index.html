@@ -46,7 +46,7 @@ body{
   height: 1.6rem;
   width: 17.7rem;
 }
-/* .index:mouseevent::click{
+/* .index:{
   border: transparent;
   margin: none;
 } */
@@ -163,6 +163,12 @@ a{
 	</td>
   <td>
     <a href="{{url_for('view_user', user_id=user[0])}}">View</a>
+  </td>
+  <td>
+    <a href="{{url_for('edit_user', user_id=user[0])}}">Edit</a>
+  </td>
+  <td>
+    <a href="{{url_for('delete_user', user_id=user[0])}}">Delete</a>
   </td>
 </tr>
 	{% endfor %}
