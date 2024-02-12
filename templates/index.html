@@ -9,9 +9,15 @@
 *{
   line-height: calc(1em +0.5rem);
   font-size: 1rem;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 html{
   scroll-behavior: smooth;
+  width: fit-content;
+  height: fit-content;
 }
 .btn{
   background-color:  #155e75; 
@@ -21,21 +27,15 @@ html{
   width: 7rem;
   margin: 1rem;
   padding: 0.4rem;
-  position: relative;
-  left: -0.2rem;
+  left: 6.6rem;
 }
 form{
-  display: flex;
-  flex-flow: column wrap;
   margin: 1.5rem;
-  align-items: center; 
-  justify-content: center;
+  left: 26.5rem;
 }
 body{
 	background-color: hsl(217, 33%, 17%);
 	color: #f1f1f1;
-  /* display: flex; */
-  /* flex-flow: column wrap; */
 }
 .index{
   background-color:transparent;
@@ -46,33 +46,31 @@ body{
   height: 1.6rem;
   width: 17.7rem;
 }
-/* .index:{
-  border: transparent;
+.index:focus{
+  border: none;
   margin: none;
-} */
+  padding: none;
+
+}
 label{
   margin:none;
-  position: relative;
   top: 2.6rem;
-  right: 6.8rem;
+  left: 2.2rem;
 }
 .btn:hover{
 	background-color: #167294;
 	cursor: pointer;
 }
 td{
-	align-items: center;
-	justify-content: center;
-	margin: 1rem;
+	margin: none;
 	border: 2.5px solid black;
   border-radius: 0.3rem;
 	padding: 0.5rem;
-  position: relative;
   top: 1rem;
   left: 23rem;
+  flex-wrap: wrap;
 }
 .div{
-  position: relative;
   margin: 0.3rem;
   margin-left: 6.1rem;
   border: 2px solid black;
@@ -88,7 +86,6 @@ td{
 img{
   height: 6rem;
   width: 6rem;
-  position: relative;
   bottom: -1rem;
   right: -36rem;
 }
@@ -96,7 +93,7 @@ a{
   color: #f1f1f1;
 }
 .input{
-  background-color: #1e293b;
+  background-color: transparent;
 	border: 2px solid #155e75;
 	border-radius: 1rem;
 	height: 1.8rem;
@@ -122,8 +119,8 @@ a{
       <input class="index" type="text" id="last-name" name="name_last" required>
     </div>
 		<label for="password">Password:</label>
-		<div class="input">
-      <input class="index" type="password" name="pass_word" id="password" required>
+		<div class="input" >
+      <input class="index" type="password" name="pass_word" id="password"  required>
     </div>
 		<input class="btn" type="submit" value="Submit">
 	</form>
