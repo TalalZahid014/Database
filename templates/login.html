@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+  <div>
+    <form action="/submit" method="post">
+      <label for="username">Username:</label>
+      <div class="input">
+        <input class="index" type="text" id="username" name="user_name" required>
+      </div>
+      <label for="first-name">First Name:</label>
+      <div class="input">
+        <input class="index" type="text" id="first-name" name="name_first" required>
+      </div>
+      <label for="last-name">Last Name:</label>
+      <div class="input">
+        <input class="index" type="text" id="last-name" name="name_last" required>
+      </div>
+      <label for="password">Password:</label>
+      <div class="input" >
+        <input class="index" type="password" name="pass_word" id="password"  required>
+      </div>
+      <input class="btn" type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>
